@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lora Spa | Magical SPA Salon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/ejg2ixh.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">Lora Spa</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a class="nav-logo" href="/index.html"><img src="./assets/logo.png" width="50" height="50" alt="Spa Logo"></a>
+        <button class="menu-toggle" id="menuToggle">
+            <span>Menu</span>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+    </nav>
+
+    <!-- Full Screen Menu -->
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <div class="menu-content">
+            <ul class="menu-links">
+                <li><a href="/index.html" data-index="01">Home</a></li>
+                <li><a href="#treatments" data-index="02">Liệu trình</a></li>
+                <li><a href="#about" data-index="03">Về LORA</a></li>
+                <li><a href="#services" data-index="04">Các dịch vụ</a></li>
+                <li><a href="/sanpham.html" data-index="05">Sản phẩm</a></li>
+                <li><a href="#contact" data-index="06">Liên hệ</a></li>
+            </ul>
+            <div class="menu-info">
+                <div class="menu-hours">
+                    <span>Giờ mở cửa</span>
+                    <p>Thứ Hai - Chủ Nhật, 10H - 22H</p>
+                </div>
+                <div class="menu-location">
+                    <span>Địa chỉ</span>
+                    <p>368B Tân Hoà Đông, phường Bình Trị Đông, TPHCM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle">
+                <span class="line"></span>
+                <span class="text">Dưỡng sinh trị liệu Đông Y</span>
+                <span class="line"></span>
+            </div>
+
+            <div class="hero-title">
+                <!-- <span class="big-number">LORA</span> -->
+                <img src="./assets/Logo_indoor.png" width="600" alt="Lora Spa">
+                <p>Không gian dưỡng sinh cho cơ thể và tâm trí được dịu lại.
+                    Trị liệu bấm huyệt Đông y, chăm sóc bằng sự chậm rãi và tinh tế.
+                    Nơi bạn thở sâu hơn, lắng lại và nghỉ ngơi đúng nghĩa.
+                </p>
+                <div class="hero-cta">
+                    <button class="btn-primary js-book-appointy" id="bookNowBtn">
+                        <span class="btn-label">Đặt lịch ngay</span>
+                    </button>
+                    <div class="hero-hours">Thứ Hai-Chủ Nhật 10AM-10PM</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="treatments">
+        <div class="section-header">
+            <div class="section-logo">Lora Spa</div>
+            <span class="section-label">SỨC KHOẺ LÀ VÀNG</span>
+        </div>
+
+        <div class="menu-intro">
+            <p>Tại Lora, mỗi liệu trình được thiết kế theo thể trạng riêng,
+                kết hợp kỹ thuật trị liệu thủ công – tinh dầu cá nhân hóa – thư giãn đa giác quan,
+                giúp cơ thể phục hồi, cân bằng và thả lỏng từ bên trong.
+            </p>
+        </div>
+
+        <div class="treatment-cards">
+            <a href="/goi-dau-duong-sinh.html">
+                <div class="treatment-card" data-aos="fade-up">
+                    <div class="card-image">
+                        <img src="./assets/co-vai-gay.jpeg" alt="Massage & Scrub">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Chăm sóc cổ vai gáy</h3>
+                        <span class="variants">Gồm 3 gói dịch vụ</span>
+                    </div>
+                    <div class="card-price">
+                        <span class="variants">Chỉ từ</span>
+                        <h3>289K</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="/goi-dau-duong-sinh.html">
+                <div class="treatment-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-image">
+                        <img src="./assets/chua-lanh-than-tam-tri.jpeg" alt="Hammam & Slimming">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Chăm sóc body</h3>
+                        <span class="variants">Gồm 3 gói dịch vụ</span>
+                    </div>
+                    <div class="card-price">
+                        <span class="variants">Chỉ từ</span>
+                        <h3>349K</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="/goi-dau-duong-sinh.html">
+                <div class="treatment-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-image">
+                        <img src="./assets/giam-mo-duong-sinh.jpeg" alt="Hammam & Slimming">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Chăm sóc thân dưới</h3>
+                        <span class="variants">Gồm 3 gói dịch vụ</span>
+                    </div>
+                    <div class="card-price">
+                        <span class="variants">Chỉ từ</span>
+                        <h3>250K</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="/goi-dau-duong-sinh.html">
+                <div class="treatment-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-image">
+                        <img src="./assets/cham-soc-da2.jpeg" alt="Hammam & Slimming">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Chăm sóc da</h3>
+                        <span class="variants">Gồm 3 gói dịch vụ</span>
+                    </div>
+                    <div class="card-price">
+                        <span class="variants">Chỉ từ</span>
+                        <h3>500K</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="/goi-dau-duong-sinh.html">
+                <div class="treatment-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-image">
+
+                        <img src="./assets/goi-dau-duong-sinh.jpeg" alt="Spa Treatments">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Gội đầu dưỡng sinh</h3>
+                        <span class="variants">Gồm 3 gói dịch vụ</span>
+                    </div>
+                    <div class="card-price">
+                        <span class="variants">Chỉ từ</span>
+                        <h3>69K</h3>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Gift Section -->
+    <section class="gift-section" id="gift">
+        <div class="gift-container">
+            <div class="gift-images">
+                <div class="gift-image gift-image-1">
+                    <img src="./assets/dau-goi-product.jpg" alt="Gift card">
+                </div>
+                <div class="gift-image gift-image-2">
+                    <img src="./assets/dau-xa-product.png" alt="Spa gift">
+                </div>
+            </div>
+            <div class="gift-content">
+                <h2>Sản phẩm</h2>
+                <p>Cùng dưỡng tâm care, chúng tôi mang đến cho bạn những sản phẩm chất lượng cao, giúp bạn thư giãn và
+                    chăm sóc bản thân một cách tốt nhất.</p>
+                <a href="/sanpham.html">
+                    <button class="btn-outline"><span class="btn-label">Tất cả sản phẩm</span></button>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-header">
+                <h2>Lora Spa cam kết</h2>
+            </div>
+            <div class="about-content">
+                <p>Liệu pháp chuẩn Đông y an toàn <br>
+                    Kết hợp kỹ thuật hiện đại, hiệu quả cao <br>
+                    Đội ngũ kỹ thuật viên được đào tạo bài bản <br>
+                    Không chỉ là spa – mà là nơi chăm sóc sức khỏe toàn diện</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="services-slider">
+            <div class="service-slide active">
+                <div class="slide-content">
+                    <h3>Combo <br>Chăm sóc thư giãn</h3>
+                    <div class="slide-image">
+                        <img src="./assets/cham-soc-thu-gian.jpeg" alt="Royal Massage">
+                    </div>
+                    <div>
+                        <p>Body 60' + Gội dưỡng sinh 60' — 498K <br>(Tặng Ngâm chân Bách thảo)</p>
+                        <p>Body 90' + Gội dưỡng sinh 60' — 648K <br>(Tặng Xông chân Thảo dược)</p>
+                    </div>
+                    <button class="btn-text js-book-appointy" id="bookNowBtn">Đặt lịch</button>
+                </div>
+            </div>
+
+            <div class="service-slide">
+                <div class="slide-content">
+                    <h3>Combo <br>Chăm sóc chuyên sâu</h3>
+                    <div class="slide-image">
+                        <img src="./assets/cham-soc-chuyen-sau.jpeg" alt="Foam Massage">
+                    </div>
+                    <div>
+                        <p>Chăm sóc Cổ Vai Gáy 45' + Gội Dưỡng sinh 60' — 438K <br>(Tặng Xông chân Thảo dược)</p>
+                        <p>Chăm sóc Cổ Vai Gáy 75' + Gội Dưỡng sinh 60' — 638K <br>(Tặng Ngâm chân Bách thảo)</p>
+                        <p>Chăm sóc Cổ Vai Gáy 90' + Gội Dưỡng sinh 60' — 748K <br>(Tặng: Xông chân Thảo dược)</p>
+
+                    </div>
+                    <button class="btn-text js-book-appointy" id="bookNowBtn">Đặt lịch</button>
+                </div>
+            </div>
+
+            <div class="service-slide">
+                <div class="slide-content">
+                    <h3>Combo <br>Gói gội chuyên sâu</h3>
+                    <div class="slide-image">
+                        <img src="./assets/goi-chuyen-sau.jpeg" alt="Balinese Classic">
+                    </div>
+                    <div>
+                        <p>Gội đầu Chuyên sâu + Chăm sóc Cổ Vai Gáy 90' + Chăm sóc Foot — 638K <br>(Tặng Xông chân Thảo
+                            dược)</p>
+                        <p>Gội đầu Chuyên sâu + Chăm sóc Cổ Vai Gáy 90' + Chăm sóc Mặt sảng khoái — 538K <br>(Tặng Ngâm
+                            chân Bách thảo)</p>
+                    </div>
+                    <button class="btn-text js-book-appointy" id="bookNowBtn">Đặt lịch</button>
+                </div>
+            </div>
+            <div class="service-slide">
+                <div class="slide-content">
+                    <h3>Combo <br>Vùng lưng</h3>
+                    <div class="slide-image">
+                        <img src="./assets/cham-soc-vung-lung.jpeg" alt="Balinese Classic">
+                    </div>
+                    <div>
+                        <p>Combo Vùng Lưng 75' + Gội dưỡng sinh 60' — 638K <br>(Tặng Ngâm chân Bách thảo)</p>
+                        <p>Combo Vùng Lưng 90' + Gội dưỡng sinh 60' — 748K <br>(Tặng Ngâm chân Bách thảo)</p>
+                    </div>
+                    <button class="btn-text js-book-appointy" id="bookNowBtn">Đặt lịch</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="services-nav">
+            <div class="service-nav-item active" data-slide="0">
+                <h4>Combo chăm sóc thư giãn</h4>
+                <p>Phù hợp để hồi phục năng lượng, giảm căng thẳng sau ngày dài làm việc.</p>
+            </div>
+            <div class="service-nav-item" data-slide="1">
+                <h4>Combo chăm sóc chuyên sâu</h4>
+                <p>Tập trung giải tỏa các điểm đau nhức, giúp lưu thông khí huyết vùng đầu mặt cổ.</p>
+            </div>
+            <div class="service-nav-item" data-slide="2">
+                <h4>Combo gội chuyên sâu</h4>
+                <p>Trải nghiệm chăm sóc đa năng: vừa làm sạch tóc, vừa thư giãn toàn diện từ đầu đến chân.</p>
+            </div>
+            <div class="service-nav-item" data-slide="3">
+                <h4>Combo vùng lưng</h4>
+                <p>Giải pháp hoàn hảo cho người hay mỏi lưng, hỗ trợ cột sống và thư giãn cơ bắp.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Marquee -->
+    <section class="brand-marquee">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span class="brand-item">Khung giờ vàng 10h - 15h từ Thứ Hai đến Thứ
+                    Sáu<img src="./assets/leave.png" alt="Brand"></span>
+                <span class="brand-item">Giảm 20% cho tất cả các dịch vụ<img src="./assets/leave.png"
+                        alt="Brand"></span>
+                <span class="brand-item">Gội đầu thảo dược: 69K -> 55K<img src="./assets/leave.png" alt="Brand"></span>
+                <span class="brand-item">Gội đầu dưỡng sinh cổ vai gáy: 149K -> 119K<img src="./assets/leave.png"
+                        alt="Brand"></span>
+                <span class="brand-item">Khung giờ vàng 10h - 15h từ Thứ Hai đến Thứ Sáu<img src="./assets/leave.png"
+                        alt="Brand"></span>
+                <span class="brand-item">Giảm 20% cho tất cả các dịch vụ<img src="./assets/leave.png"
+                        alt="Brand"></span>
+            </div>
+            <div class="marquee-content">
+                <span class="brand-item">Khung giờ vàng 10h - 15h từ Thứ Hai đến Thứ
+                    Sáu<img src="./assets/leave.png" alt="Brand"></span>
+                <span class="brand-item">Giảm 20% cho tất cả các dịch vụ<img src="./assets/leave.png"
+                        alt="Brand"></span>
+                <span class="brand-item">Gội đầu thảo dược: 69K -> 55K<img src="./assets/leave.png" alt="Brand"></span>
+                <span class="brand-item">Gội đầu dưỡng sinh cổ vai gáy: 149K -> 119K<img src="./assets/leave.png"
+                        alt="Brand"></span>
+                <span class="brand-item">Khung giờ vàng 10h - 15h từ Thứ Hai đến Thứ Sáu<img src="./assets/leave.png"
+                        alt="Brand"></span>
+                <span class="brand-item">Giảm 20% cho tất cả các dịch vụ <img src="./assets/leave.png"
+                        alt="Brand"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Club Cards Section -->
+    <section class="club-section">
+        <div class="club-header">
+            <h2>Lora Spa - Ưu đãi đặc biệt</h2>
+            <p>Nạp thẻ nhận thêm giá trị lên đến 7.000.000₫ hoặc mua liệu trình tặng đến 20 buổi.<br>
+                Tận hưởng dịch vụ chăm sóc tốt nhất với chi phí tối ưu.</p>
+        </div>
+        <div class="club-cards">
+            <div class="club-card">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80" alt="Club Card Gold">
+            </div>
+            <div class="club-card">
+                <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=400&q=80"
+                    alt="Club Card Platinum">
+            </div>
+        </div>
+        <button class="btn-outline"><span class="btn-label">Xem ưu đãi</span></button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-cta">
+            <button class="btn-primary large js-book-appointy" id="bookNowBtn"><span class="btn-label">Đặt lịch
+                    ngay</span></button>
+        </div>
+
+        <div class="footer-image">
+            <img src="./assets/footer.jpeg" alt="Spa atmosphere">
+        </div>
+
+        <div class="footer-content">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#about">Về Lora</a></li>
+                    <li><a href="#treatments">Liệu trình</a></li>
+                    <li><a href="#team">Các dịch vụ</a></li>
+                    <li><a href="/sanpham.html">Sản phẩm</a></li>
+                    <li><a href="#">Các gói combo</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+            <button class="btn-outline btn-outline--call"><span class="btn-label">Gọi để đặt lịch </span></button>
+        </div>
+    </footer>
+
+    <!-- Contact Widget -->
+    <div id="contact-widget" class="contact-widget">
+        <div class="contact-icons" id="contactIcons">
+
+            <a href="https://zalo.me/0902281409" class="contact-icon" target="_blank">
+                <img src="./assets/Zalo-icon.png" alt="Zalo Contact">
+            </a>
+
+            <a href="https://www.facebook.com/loraspabinhtan/" class="contact-icon" target="_blank">
+                <img src="./assets/messenger-icon.png" alt="Messenger Contact">
+            </a>
+
+            <a href="tel:0902281409" class="contact-icon">
+                <img src="./assets/phone-call-icon.png" alt="Call Us">
+            </a>
+        </div>
+
+        <button class="contact-button" onclick="toggleContactIcons()">
+            <img src="./assets/customer-service-icon.png" alt="Support">
+        </button>
+    </div>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

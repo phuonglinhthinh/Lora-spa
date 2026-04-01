@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lora Spa | Magical SPA Salon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/ejg2ixh.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">Lora Spa</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a class="nav-logo" href="/index.html"><img src="./assets/logo.png" width="50" height="50" alt="Spa Logo"></a>
+        <button class="menu-toggle" id="menuToggle">
+            <span>Menu</span>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+    </nav>
+
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <div class="menu-content">
+            <ul class="menu-links">
+                <li><a href="/index.html" data-index="01">Home</a></li>
+                <li><a href="#treatments" data-index="02">Liệu trình</a></li>
+                <li><a href="#about" data-index="03">Về LORA</a></li>
+                <li><a href="#services" data-index="04">Các dịch vụ</a></li>
+                <li><a href="#team" data-index="05">Sản phẩm</a></li>
+                <li><a href="#contact" data-index="06">Liên hệ</a></li>
+            </ul>
+            <div class="menu-info">
+                <div class="menu-hours">
+                    <span>Giờ mở cửa</span>
+                    <p>Thứ Hai - Chủ Nhật, 10H - 22H</p>
+                </div>
+                <div class="menu-location">
+                    <span>Địa chỉ</span>
+                    <p>368B Tân Hoà Đông, phường Bình Trị Đông, TPHCM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Section -->
+    <section class="detail-section" id="detail">
+        <div class="detail-container">
+            <div class="detail-wrapper">
+                <div class="detail-content">
+                    <h2>Sản phẩm</h2>
+                    <p>Cùng <em>Dưỡng Tâm Care</em>, chúng tôi mang đến cho bạn những sản phẩm chất lượng cao, giúp bạn
+                        thư
+                        giãn và
+                        chăm sóc bản thân một cách tốt nhất.</p>
+                    <div class="detail-partner">
+                        <img src="./assets/Logo_indoor.png" alt="Lora Spa logo">
+                        <div>+</div>
+                        <img src="./assets/duong-tam-care-logo.png" alt="Dưỡng Tâm Care logo">
+                    </div>
+                </div>
+            </div>
+            <!-- Services Section -->
+            <section class="products-section" id="products">
+                <div class="products-slider">
+                    <div class="product-slide">
+                        <div class="slide-content">
+                            <h3>Dầu gội thảo mộc <br>Dưỡng tâm Care</h3>
+                            <img class="slide-image slide-image--product" src="./assets/dau-goi-product.jpg"
+                                alt="Royal Massage">
+                            <div>
+                                <div class="product-subtitle">Công dụng</div>
+                                <ul>
+                                    <li>Làm sạch sâu da đầu, hút sạch bã nhờn, gàu và độc tố.</li>
+                                    <li>Ngăn ngừa rụng tóc – giúp tóc chắc khỏe từ gốc.</li>
+                                    <li>Kích thích mọc tóc – phục hồi nang tóc yếu.</li>
+                                    <li>Giảm căng thẳng, thư giãn nhờ tinh dầu thảo dược.</li>
+                                    <li>Phù hợp với mọi loại tóc, kể cả tóc yếu, rụng, hoặc sau sinh.</li>
+                                    <li>An toàn cho cả trẻ em, phụ nữ mang thai và người lớn tuổi.</li>
+                                </ul>
+                                <div class="product-subtitle">Liệu trình kết hợp</div>
+                                <ul>
+                                    <li>Gội đầu dưỡng sinh</li>
+                                    <li>Chăm sóc chuyên sâu vùng đầu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-slide">
+                        <div class="slide-content">
+                            <h3>Dầu xả thảo mộc <br>Dưỡng tâm Care</h3>
+                            <img class="slide-image slide-image--product" src="./assets/dau-xa-product.png"
+                                alt="Foam Massage">
+                            <div>
+                                <div class="product-subtitle">Công dụng</div>
+                                <ul>
+                                    <li>Làm mềm tóc tự nhiên, chống rối, dễ chải.</li>
+                                    <li>Phục hồi cấu trúc tóc yếu, khô xơ, gãy rụng.</li>
+                                    <li>Dưỡng ẩm sâu, cân bằng pH cho da đầu.</li>
+                                    <li>Bảo vệ tóc khỏi tác động nhiệt và môi trường.</li>
+                                    <li>Giảm stress, thư giãn đầu óc nhờ tinh dầu thảo mộc.</li>
+                                    <li>Kết hợp với dầu gội Dưỡng Tâm Care để nâng cao hiệu quả trị liệu.</li>
+                                </ul>
+                                <div class="product-subtitle">Liệu trình kết hợp</div>
+                                <ul>
+                                    <li>Gội đầu dưỡng sinh</li>
+                                    <li>Chăm sóc chuyên sâu vùng đầu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-slide">
+                        <div class="slide-content">
+                            <h3>Tinh chất massage<br>Thượng Phu Thảo</h3>
+                            <img class="slide-image slide-image--product"
+                                src="./assets/tinh-chat-masage-thuong-phu-thao.png" alt="Balinese Classic">
+                            <div>
+                                <div class="product-subtitle">Thành phần</div>
+                                <ul>
+                                    <li>Nước, Cetearyl alcohol, Tinh dầu gừng, Axit citric, Chiết xuất gừng, Curcumin,
+                                        Glycerin, Axit pantothenic.</li>
+                                </ul>
+                                <div class="product-subtitle">Công dụng</div>
+                                <ul>
+                                    <li>Cải thiện hiệu quả sức sống da đầu</li>
+                                    <li>Điều tiết cân bằng nước và dầu trên da đầu</li>
+                                    <li>Làm mềm sợi tóc, da đầu bị suy yếu do
+                                        môi trường bên ngoài tác động</li>
+                                    <li>Bổ sung dưỡng chất cho da đầu và làm da đầu thư giãn, phục hồi tự nhiên.</li>
+                                </ul>
+                                <div class="product-subtitle">Liệu trình kết hợp</div>
+                                <ul>
+                                    <li>Gội đầu dưỡng sinh</li>
+                                    <li>Chăm sóc chuyên sâu vùng đầu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-slide">
+                        <div class="slide-content">
+                            <h3>Máy Ngũ Hành</h3>
+                            <img class="slide-image slide-image--product" src="./assets/may-ngu-hanh.jpg"
+                                alt="Balinese Classic">
+                            <div>
+                                <div class="product-subtitle">Công dụng</div>
+                                <ul>
+                                    <li>Đả thông giảm đau: lưng, eo, vai,... trừ phong bế hàn, massage vi điện.</li>
+                                    <li>Dưỡng sinh chăm sóc: chức năng sinh
+                                        lý yếu, viêm bả vai (thay thế các thao tác bằng tay).</li>
+                                    <li>Kích hoạt bề mặt mô lẫn mạch máu, giúp tế bào sản sinh sau 2000
+                                        lần.</li>
+                                    <li>Đả thông nhân thể, ngăn ngừa khối u.</li>
+                                    <li>Chẩn đoán sức khỏe.</li>
+                                </ul>
+                                <div class="product-subtitle">Liệu trình kết hợp</div>
+                                <ul>
+                                    <li>Chăm sóc đá thông vai cổ, eo lưng, bấm huyệt, tỳ vị</li>
+                                    <li>Giảm béo</li>
+                                    <li>Chăm sóc da mặt nâng cơ</li>
+                                    <li>Chăm sóc săn sóc khuôn ngực</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-slide">
+                        <div class="slide-content">
+                            <h3>Máy Ngải Cứu</h3>
+                            <img class="slide-image slide-image--product" src="./assets/may-ngai-cuu.jpg"
+                                alt="Máy Ngải Cứu">
+                            <div>
+                                <div class="product-subtitle">Công dụng</div>
+                                <ul>
+                                    <li>Phòng và trị: đau lưng, thoái hóa cột sống, thoát vị đĩa đệm, thần kinh tọa, đau
+                                        khớp gối.</li>
+                                    <li>Hỗ trợ hô hấp: tức ngực khó thở, ho lâu, viêm xoang.</li>
+                                    <li>Phụ khoa & Nam khoa: giải quyết lạnh cảm, đau bụng kinh, khí hư, yếu sinh lý.
+                                    </li>
+                                    <li>Cải thiện tuần hoàn, huyết áp thấp, bổ sung nguyên khí và tăng đề kháng.</li>
+                                </ul>
+                                <div class="product-subtitle">Liệu trình kết hợp</div>
+                                <ul>
+                                    <li>Cứu nóng</li>
+                                    <li>Kết hợp bài thuốc Phục Tà Ích Nhân</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-slide">
+                        <div class="slide-content">
+                            <h3>Cung Phẩm Ngự Y</h3>
+                            <img class="slide-image slide-image--product" src="./assets/cung-pham-ngu-y.jpg"
+                                alt="Cung Phẩm Ngự Y">
+                            <div>
+                                <div class="product-subtitle">Thành phần</div>
+                                <ul>
+                                    <li>Sáp ong, phục linh, lá ngải, đương quy, ích mẫu, gừng.</li>
+                                </ul>
+                                <div class="product-subtitle">Công dụng</div>
+                                <ul>
+                                    <li>Chăm sóc vai gáy, đả thông kinh lạc vùng vai.</li>
+                                    <li>Hỗ trợ bài độc gan, thận, tăng cường tiết dịch mật và điều chỉnh tiêu hóa.</li>
+                                    <li>Trị liệu giảm béo vùng bụng mỡ, vòng hông, giúp săn chắc bụng dưới.</li>
+                                    <li>Điều hòa huyết khí và tăng cường kinh lạc.</li>
+                                </ul>
+                                <div class="product-subtitle">Liệu trình kết hợp</div>
+                                <ul>
+                                    <li>Bài độc gan, kiện vị, dưỡng sinh phụ khoa</li>
+                                    <li>Bổ thận ích khí, bài phong tán hàn</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-slide">
+                        <div class="slide-content">
+                            <h3>Dưỡng Hộ Khương</h3>
+                            <img class="slide-image slide-image--product" src="./assets/duong-ho-khuong.jpg"
+                                alt="Dưỡng Hộ Khương">
+                            <div>
+                                <div class="product-subtitle">Thành phần</div>
+                                <ul>
+                                    <li>Sáp ong, dầu khoáng, kê huyết đằng, hồng hoa, đương quy, rễ cam.</li>
+                                </ul>
+                                <div class="product-subtitle">Công dụng</div>
+                                <ul>
+                                    <li>Bảo vệ và chăm sóc vùng bụng, làm khỏe và nuôi dưỡng da.</li>
+                                    <li>Điều dưỡng chức năng tạng vị, tiêu độc.</li>
+                                    <li>Điều dưỡng hệ tuần hoàn máu, giảm mỡ hiệu quả.</li>
+                                    <li>Tạo cảm giác ấm thân, thư giãn sâu.</li>
+                                </ul>
+                                <div class="product-subtitle">Liệu trình kết hợp</div>
+                                <ul>
+                                    <li>Chăm sóc vai và khuôn ngực</li>
+                                    <li>Bổ thận ích khí, bài phong tán hàn</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-slide">
+                        <div class="slide-content">
+                            <h3>Túc Dục Phấn <br>(Bột ngâm chân)</h3>
+                            <img class="slide-image slide-image--product" src="./assets/tuc-duc-phan.jpg"
+                                alt="Túc Dục Phấn">
+                            <div>
+                                <div class="product-subtitle">Thành phần</div>
+                                <ul>
+                                    <li>Lá ngải, khương hoàng, độc hoạt, ích mẫu thảo, xuyên khung, muối khoáng.</li>
+                                </ul>
+                                <div class="product-subtitle">Công dụng</div>
+                                <ul>
+                                    <li>Khử trùng, tiêu viêm, khử độc thông kinh lạc vùng chân.</li>
+                                    <li>Hỗ trợ trị ngứa, eczema, nước ăn chân, bong tróc da chân.</li>
+                                    <li>Thư giãn gân cốt, lưu thông máu, chống mồ hôi và khử mùi.</li>
+                                    <li>Cải thiện tuần hoàn máu về tim và giữ ẩm da chân.</li>
+                                </ul>
+                                <div class="product-subtitle">Liệu trình kết hợp</div>
+                                <ul>
+                                    <li>Xông chân thảo dược</li>
+                                    <li>Ngâm chân Bách thảo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-slide">
+                        <div class="slide-content">
+                            <h3>Bộ Sản Phẩm <br>Chăm Sóc Da Mặt</h3>
+                            <img class="slide-image slide-image--product" src="./assets/bo-cao-gio-mat.jpg"
+                                alt="Chăm sóc da mặt">
+                            <div>
+                                <div class="product-subtitle">Sản phẩm bao gồm</div>
+                                <ul>
+                                    <li>Sữa rửa mặt, Kem cạo gió, Mặt nạ ngọc, Nước tuần hoàn, Kem dưỡng.</li>
+                                </ul>
+                                <div class="product-subtitle">Công dụng</div>
+                                <ul>
+                                    <li>Bài độc da, làm sáng da và thu nhỏ lỗ chân lông.</li>
+                                    <li>Giảm nám, mờ vết thâm và mờ nếp nhăn.</li>
+                                    <li>Nâng cao độ ẩm, giúp da mịn màng và trẻ hóa.</li>
+                                </ul>
+                                <div class="product-subtitle">Liệu trình kết hợp</div>
+                                <ul>
+                                    <li>Chăm sóc mặt sảng khoái</li>
+                                    <li>Nâng cơ mặt chuyên sâu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-cta">
+            <button class="btn-primary large js-book-appointy" id="bookNowBtn"><span class="btn-label">Đặt lịch
+                    ngay</span></button>
+        </div>
+
+        <div class="footer-image">
+            <img src="./assets/footer.jpeg" alt="Spa atmosphere">
+        </div>
+
+        <div class="footer-content">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#about">Về Lora</a></li>
+                    <li><a href="#treatments">Liệu trình</a></li>
+                    <li><a href="#team">Các dịch vụ</a></li>
+                    <li><a href="/sanpham.html">Sản phẩm</a></li>
+                    <li><a href="#">Các gói combo</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+            <button class="btn-outline btn-outline--call"><span class="btn-label">Gọi để đặt lịch </span></button>
+        </div>
+    </footer>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
