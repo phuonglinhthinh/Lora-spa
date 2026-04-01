@@ -1,5 +1,5 @@
 /**
- * 7 SKY SPA - Main JavaScript with GSAP Animations
+ * LORA SPA - Main JavaScript with GSAP Animations
  * GSAP is loaded via CDN in index.html - no imports needed
  */
 
@@ -597,120 +597,68 @@ const toggleContactIcons = () => {
 // ==========================================
 // Booking Window
 // ==========================================
-const appointyBooking = {
-    business: 'Loraspa',
-    scriptUrl: 'https://cdn.appointy.com/web/blob-web/js/appointy-widget.js',
-    scriptPromise: null,
-
-    configure() {
-        window.Appointy = window.Appointy || {};
-        window.Appointy.config = {
-            business: this.business,
-            defaultTab: 'Schedule',
-            extraParameter: '',
-            buttonImg: '',
-            modal: {
-                height: '100%',
-                width: '100%'
-            },
-            buttonAlign: 'Right',
-            buttonPosition: '50'
-        };
-    },
-
-    loadScript() {
-        if (this.scriptPromise) return this.scriptPromise;
-
-        this.scriptPromise = new Promise((resolve, reject) => {
-            const existing = document.querySelector(`script[src="${this.scriptUrl}"]`);
-            if (existing) {
-                resolve();
-                return;
-            }
-
-            const script = document.createElement('script');
-            script.src = this.scriptUrl;
-            script.async = true;
-            script.onload = () => resolve();
-            script.onerror = () => reject(new Error('Failed to load Appointy script'));
-            document.body.appendChild(script);
-        });
-
-        return this.scriptPromise;
-    },
-
-    waitForLauncher(timeoutMs = 4000) {
-        return new Promise((resolve, reject) => {
-            const start = Date.now();
-            const timer = window.setInterval(() => {
-                const btn = document.getElementById('app-widget-btn');
-                if (btn) {
-                    window.clearInterval(timer);
-                    resolve(btn);
-                    return;
-                }
-                if (Date.now() - start > timeoutMs) {
-                    window.clearInterval(timer);
-                    reject(new Error('Appointy launcher not found'));
-                }
-            }, 120);
-        });
-    },
-
-    openFallback() {
-        window.open(`https://booking.appointy.com/${this.business}`, '_blank', 'noopener');
-    },
-
-    bindTriggers() {
-        document.querySelectorAll('.js-book-appointy').forEach((el) => {
-            el.addEventListener('click', async (e) => {
-                e.preventDefault();
-                try {
-                    this.configure();
-                    await this.loadScript();
-                    const launcher = await this.waitForLauncher();
-                    launcher.click();
-                } catch (error) {
-                    this.openFallback();
-                }
-            });
-        });
-    },
-    hideDefaultLauncher() {
-        // Add one global style rule
-        if (!document.getElementById('appointy-hide-launcher-style')) {
-            const style = document.createElement('style');
-            style.id = 'appointy-hide-launcher-style';
-            style.textContent = `
-                #app-widget-btn,
-                .app-widget-btn {
-                    display: none !important;
-                    visibility: hidden !important;
-                    opacity: 0 !important;
-                    pointer-events: none !important;
-                }
-            `;
-            document.head.appendChild(style);
-        }
-
-        // In case Appointy re-renders the button later
-        if (!this.launcherObserver) {
-            this.launcherObserver = new MutationObserver(() => {
-                const btn = document.getElementById('app-widget-btn');
-                if (btn) btn.style.display = 'none';
-            });
-            this.launcherObserver.observe(document.body, { childList: true, subtree: true });
-        }
-    },
+const bookingManager = {
+    modal: document.getElementById('bookingModal'),
+    container: document.getElementById('tidycal-iframe-container'),
+    tidyCalLink: 'https://tidycal.com/your-username',
 
     init() {
-        this.configure();
-        this.bindTriggers();
-        this.loadScript()
-            .then(() => this.hideDefaultLauncher())
-            .catch(() => {
-                // keep silent; click handler still has fallback
+        if (!this.modal) return;
+
+        const bookingButtons = document.querySelectorAll('.booknow-btn, #bookNowBtn');
+
+        bookingButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.open();
             });
+        });
+
+        const closeButton = this.modal.querySelector('.modal-close, .close-button');
+        if (closeButton) {
+            closeButton.addEventListener('click', () => this.close());
+        }
+
+        // Đóng khi click vùng nền bên ngoài modal-content
+        this.modal.addEventListener('click', (event) => {
+            if (event.target === this.modal) {
+                this.close();
+            }
+        });
+    },
+
+    open() {
+        if (!this.modal) return;
+
+        this.modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+
+        // Lazy load iframe: Only create iframe when user clicks
+        if (this.container && !this.container.innerHTML) {
+            const iframe = document.createElement('iframe');
+            iframe.src = this.tidyCalLink;
+            this.container.appendChild(iframe);
+        } 
+
+        gsap.fromTo('.modal',
+            { scale: 0.8, opacity: 0 },
+            { scale: 1, opacity: 1, duration: 0.1, ease: 'linear' }
+        );
+    },
+
+    close() {
+        if (!this.modal) return;
+
+        gsap.to('.modal', {
+            scale: 0.8,
+            opacity: 0,
+            duration: 0.1,
+            ease: 'power3.in',
+            onComplete: () => {
+                this.modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
     }
 };
 
@@ -745,8 +693,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize image hover effects
     imageHover.init();
 
-    // Initialize Appointy
-    appointyBooking.init();
+    // Initialize booking
+    bookingManager.init();
 
 });
 
