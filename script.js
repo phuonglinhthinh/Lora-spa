@@ -600,10 +600,19 @@ const toggleContactIcons = () => {
 const bookingManager = {
     modal: document.getElementById('bookingModal'),
     container: document.getElementById('tidycal-iframe-container'),
-    tidyCalLink: 'https://tidycal.com/your-username',
+    iframe: null,
+    closeBtn: null,
+    backBtn: null,
+    tidyCalLink: 'https://tidycal.com/loraspa',
+    isModalOpen: false,
+    hasLoadedMainPage: false,
 
     init() {
         if (!this.modal) return;
+
+        this.iframe = this.modal.querySelector('iframe');
+        this.closeBtn = this.modal.querySelector('.modal-close, .close-button');
+        this.backBtn = this.modal.querySelector('.back-button');
 
         const bookingButtons = document.querySelectorAll('.booknow-btn, #bookNowBtn');
 
@@ -614,9 +623,29 @@ const bookingManager = {
             });
         });
 
-        const closeButton = this.modal.querySelector('.modal-close, .close-button');
-        if (closeButton) {
-            closeButton.addEventListener('click', () => this.close());
+        if (this.closeBtn) {
+            this.closeBtn.style.display = 'block';
+            this.closeBtn.addEventListener('click', () => this.close());
+        }
+
+        if (this.backBtn) {
+            this.backBtn.style.display = 'none';
+            this.backBtn.addEventListener('click', () => this.goToMainPage());
+        }
+
+        if (this.iframe) {
+            this.iframe.addEventListener('load', () => {
+                if (!this.isModalOpen) return;
+
+                if (!this.hasLoadedMainPage) {
+                    this.hasLoadedMainPage = true;
+                    this.hideNavigationActions();
+                    return;
+                }
+
+                // A second iframe load while modal is open is treated as sublink navigation.
+                this.showNavigationActions();
+            });
         }
 
         // Đóng khi click vùng nền bên ngoài modal-content
@@ -627,18 +656,41 @@ const bookingManager = {
         });
     },
 
+    hideNavigationActions() {
+        if (this.backBtn) this.backBtn.style.display = 'none';
+    },
+
+    showNavigationActions() {
+        if (this.backBtn) this.backBtn.style.display = 'block';
+    },
+
+    goToMainPage() {
+        if (!this.iframe) return;
+
+        this.hasLoadedMainPage = false;
+        this.hideNavigationActions();
+        this.iframe.src = this.tidyCalLink;
+    },
+
     open() {
         if (!this.modal) return;
 
         this.modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
+        this.isModalOpen = true;
+        this.hasLoadedMainPage = false;
+        this.hideNavigationActions();
+
+        if (this.iframe) {
+            this.iframe.src = this.tidyCalLink;
+        }
 
         // Lazy load iframe: Only create iframe when user clicks
         if (this.container && !this.container.innerHTML) {
             const iframe = document.createElement('iframe');
             iframe.src = this.tidyCalLink;
             this.container.appendChild(iframe);
-        } 
+        }
 
         gsap.fromTo('.modal',
             { scale: 0.8, opacity: 0 },
@@ -648,6 +700,9 @@ const bookingManager = {
 
     close() {
         if (!this.modal) return;
+
+        this.isModalOpen = false;
+        this.hideNavigationActions();
 
         gsap.to('.modal', {
             scale: 0.8,
