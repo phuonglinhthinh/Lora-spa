@@ -20,7 +20,6 @@ function optimizeImageLoading() {
             img.loading = index < 2 ? 'eager' : 'lazy';
         }
         if (!img.hasAttribute('decoding')) {
-            img.decoding = 'async';
         }
     });
 }
@@ -35,7 +34,7 @@ const preloader = {
     init() {
         const minDuration = 700;
         const start = performance.now();
-
+                const bookingButtons = document.querySelectorAll('.booknow-btn, .js-book-appointy');
         gsap.to(this.progress, {
             width: '100%',
             duration: minDuration / 1000,
@@ -614,7 +613,7 @@ const bookingManager = {
         this.closeBtn = this.modal.querySelector('.modal-close, .close-button');
         this.backBtn = this.modal.querySelector('.back-button');
 
-        const bookingButtons = document.querySelectorAll('.booknow-btn, #bookNowBtn');
+        const bookingButtons = document.querySelectorAll('.booknow-btn, .js-book-appointy');
 
         bookingButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -683,13 +682,6 @@ const bookingManager = {
 
         if (this.iframe) {
             this.iframe.src = this.tidyCalLink;
-        }
-
-        // Lazy load iframe: Only create iframe when user clicks
-        if (this.container && !this.container.innerHTML) {
-            const iframe = document.createElement('iframe');
-            iframe.src = this.tidyCalLink;
-            this.container.appendChild(iframe);
         }
 
         gsap.fromTo('.modal',
