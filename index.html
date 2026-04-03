@@ -5,26 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lora Spa | Dưỡng sinh trị liệu Đông y</title>
+    <link rel="preload" href="./assets/fonts/MJ%20Kedanty.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://use.typekit.net/ejg2ixh.css">
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-content">
-            <div class="preloader-logo">Lora Spa</div>
-            <div class="preloader-bar">
-                <div class="preloader-progress"></div>
-            </div>
-        </div>
-    </div>
-
     <!-- Navigation -->
     <nav class="navbar">
         <a class="nav-logo" href="/index.html"><img src="./assets/logo.png" width="50" height="50" alt="Spa Logo"></a>
@@ -122,7 +107,7 @@
             <a href="/goi-dau-duong-sinh.html">
                 <div class="treatment-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="card-image">
-                        <img src="./assets/chua-lanh-than-tam-tri.jpeg" alt="Hammam & Slimming" loading="lazy"
+                        <img src="./assets/chua-lanh-than-tam-tri-optimized.jpg" alt="Hammam & Slimming" loading="lazy"
                             decoding="async">
                         <div class="card-overlay"></div>
                     </div>
@@ -199,7 +184,7 @@
                     <img src="./assets/dau-goi-product.jpg" alt="Gift card" loading="lazy" decoding="async">
                 </div>
                 <div class="gift-image gift-image-2">
-                    <img src="./assets/dau-xa-product.png" alt="Spa gift" loading="lazy" decoding="async">
+                    <img src="./assets/dau-xa-product-optimized.jpg" alt="Spa gift" loading="lazy" decoding="async">
                 </div>
             </div>
             <div class="gift-content">
@@ -351,10 +336,10 @@
     <section class="club-section">
         <div class="club-cards">
             <div class="club-card">
-                <img src="./assets/the-lieu-trinh.png" alt="The lieu trinh">
+                <img src="./assets/the-lieu-trinh-optimized.jpg" alt="The lieu trinh" loading="lazy" decoding="async">
             </div>
             <div class="club-card">
-                <img src="./assets/the-tra-truoc.png" alt="The tra truoc">
+                <img src="./assets/the-tra-truoc-optimized.jpg" alt="The tra truoc" loading="lazy" decoding="async">
             </div>
         </div>
         <div class="club-header">
@@ -419,11 +404,12 @@
     <div id="contact-widget" class="contact-widget">
         <div class="contact-icons" id="contactIcons">
 
-            <a href="https://zalo.me/0902281409" class="contact-icon" target="_blank">
-                <img src="./assets/Zalo-icon.png" alt="Zalo Contact">
+            <a href="https://zalo.me/0902281409" class="contact-icon" target="_blank" rel="noopener noreferrer">
+                <img src="./assets/zalo-icon.png" alt="Zalo Contact">
             </a>
 
-            <a href="https://www.facebook.com/loraspabinhtan/" class="contact-icon" target="_blank">
+            <a href="https://www.facebook.com/loraspabinhtan/" class="contact-icon" target="_blank"
+                rel="noopener noreferrer">
                 <img src="./assets/messenger-icon.png" alt="Messenger Contact">
             </a>
 
@@ -440,8 +426,13 @@
     <!-- Booking Modal -->
     <div id="bookingModal" class="modal">
         <div class="modal-content">
-            <span class="back-button" title="Quay lại danh sách"><img width="20" height="20"
-                    src="https://img.icons8.com/ios/50/FFFFFF/back--v1.png" alt="back--v1" /></span>
+            <span class="back-button" title="Quay lại danh sách">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M15 18l-6-6 6-6"></path>
+                </svg>
+            </span>
             <span class="close-button"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
                     viewBox="0 0 50 50" style="fill:#FFFFFF;">
                     <path
@@ -452,10 +443,7 @@
         </div>
     </div>
 
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>

@@ -5,26 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lora Spa | Magical SPA Salon</title>
+    <link rel="preload" href="./assets/fonts/MJ%20Kedanty.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://use.typekit.net/ejg2ixh.css">
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-content">
-            <div class="preloader-logo">Lora Spa</div>
-            <div class="preloader-bar">
-                <div class="preloader-progress"></div>
-            </div>
-        </div>
-    </div>
-
     <!-- Navigation -->
     <nav class="navbar">
         <a class="nav-logo" href="/index.html">
@@ -110,7 +95,7 @@
                     <div class="product-slide">
                         <div class="slide-content">
                             <h3>Dầu xả thảo mộc <br>Dưỡng tâm Care</h3>
-                            <img class="slide-image slide-image--product" src="./assets/dau-xa-product.png"
+                            <img class="slide-image slide-image--product" src="./assets/dau-xa-product-optimized.jpg"
                                 alt="Foam Massage" loading="lazy" decoding="async">
                             <div>
                                 <div class="product-subtitle">Công dụng</div>
@@ -135,7 +120,7 @@
                         <div class="slide-content">
                             <h3>Tinh chất massage<br>Thượng Phu Thảo</h3>
                             <img class="slide-image slide-image--product"
-                                src="./assets/tinh-chat-masage-thuong-phu-thao.png" alt="Balinese Classic"
+                                src="./assets/tinh-chat-masage-thuong-phu-thao-optimized.jpg" alt="Balinese Classic"
                                 loading="lazy" decoding="async">
                             <div>
                                 <div class="product-subtitle">Thành phần</div>
@@ -163,7 +148,7 @@
                         <div class="slide-content">
                             <h3>Máy Ngũ Hành</h3>
                             <img class="slide-image slide-image--product" src="./assets/may-ngu-hanh.jpg"
-                                alt="Balinese Classic">
+                                alt="Balinese Classic" loading="lazy" decoding="async">
                             <div>
                                 <div class="product-subtitle">Công dụng</div>
                                 <ul>
@@ -291,7 +276,7 @@
                         <div class="slide-content">
                             <h3>Bộ Sản Phẩm <br>Chăm Sóc Da Mặt</h3>
                             <img class="slide-image slide-image--product" src="./assets/bo-cao-gio-mat.jpg"
-                                alt="Chăm sóc da mặt">
+                                alt="Chăm sóc da mặt" loading="lazy" decoding="async">
                             <div>
                                 <div class="product-subtitle">Sản phẩm bao gồm</div>
                                 <ul>
@@ -341,8 +326,5 @@
             <button class="btn-outline btn-outline--call"><span class="btn-label">Gọi để đặt lịch </span></button>
         </div>
     </footer>
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
