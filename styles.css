@@ -1,10 +1,3 @@
-/* ==========================================
-   7 SKY SPA - Mobile-First Styles
-   Base styles are for mobile, enhanced with min-width queries
-   ========================================== */
-
-/* CSS Variables */
-
 @font-face {
     font-family: 'Kedanty';
     src: url('./assets/fonts/MJ\ Kedanty.ttf');
@@ -451,8 +444,9 @@ img {
 }
 
 .btn-text--back::after {
-    display:none;
+    display: none;
 }
+
 .btn-text--back::before {
     content: '';
     display: inline-block;
@@ -464,6 +458,7 @@ img {
     transition: transform 0.4s var(--transition-smooth);
     rotate: 180deg;
 }
+
 .btn-text--back:hover::before {
     transform: translateX(3px);
 }
@@ -983,7 +978,6 @@ img {
 /* ==========================================
    Booking Modal
    ========================================== */
-/* The Background Overlay */
 .modal {
     display: flex;
     align-items: flex-start;
@@ -1021,10 +1015,10 @@ img {
 
 .back-button {
     position: absolute;
-    left: 15px;
-    top: 15px;
-    color: #aaa;
-    font-size: 30px;
+    left: 7px;
+    top: 9px;
+    color: var(--color-text);
+    font-size: 28px;
     cursor: pointer;
     z-index: 10002;
     transition: transform 0.2s ease;
@@ -1040,7 +1034,7 @@ img {
     position: absolute;
     right: 15px;
     top: 5px;
-    color: #aaa;
+    color: var(--color-text);
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
@@ -1053,7 +1047,6 @@ img {
 
 iframe {
     width: 100%;
-    height: 100%;
     border: none;
 }
 
@@ -1128,7 +1121,7 @@ iframe {
    ========================================== */
 .contact-widget {
     position: fixed;
-    bottom: 15%;
+    bottom: 7%;
     right: 20px;
     display: flex;
     flex-direction: column-reverse;
@@ -1366,6 +1359,7 @@ iframe {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .perf-section,
     .perf-reveal {
         opacity: 1;
