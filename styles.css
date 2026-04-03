@@ -12,6 +12,13 @@
 @font-face {
     font-family: 'Kedanty';
     src: url('./assets/fonts/MJ\ Kedanty.ttf');
+    font-display: swap;
+}
+
+/* Optimize image rendering */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 :root {
@@ -284,10 +291,14 @@ img {
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
-    background-image: url('./assets/hero_img.JPG.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #2b211d;
+}
+
+.hero.bg-loaded {
+    background-image: url('./assets/hero_img.JPG.jpg');
 }
 
 
@@ -574,6 +585,7 @@ img {
     height: 100%;
     object-fit: cover;
     transition: transform 0.8s var(--transition-smooth);
+    max-width: 100%;
 }
 
 .treatment-card:hover .card-image img {
@@ -669,6 +681,7 @@ img {
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
+    max-width: 100%;
 }
 
 /* .gift-images {
@@ -893,6 +906,7 @@ img {
     object-fit: cover;
     aspect-ratio: 1/1;
     width: 100%;
+    max-width: 100%;
 }
 
 .product-subtitle {

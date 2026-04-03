@@ -63,6 +63,11 @@ const preloader = {
             onComplete: () => {
                 this.element.style.display = 'none';
                 document.body.classList.remove('no-scroll');
+                // Defer hero background image until after preloader
+                const heroSection = document.querySelector('.hero');
+                if (heroSection) {
+                    heroSection.classList.add('bg-loaded');
+                }
                 heroAnimations.init();
             }
         });
