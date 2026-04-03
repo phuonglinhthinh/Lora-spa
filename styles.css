@@ -338,7 +338,8 @@ img {
     color: var(--color-accent);
 }
 
-.hero-hours, .hero-location {
+.hero-hours,
+.hero-location {
     text-align: center;
     margin: .75rem 0 .1rem 0;
     font-size: 0.625rem;
@@ -478,6 +479,24 @@ img {
 }
 
 .btn-text:hover::after {
+    transform: translateX(3px);
+}
+
+.btn-text--back::after {
+    display:none;
+}
+.btn-text--back::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.4s var(--transition-smooth);
+    rotate: 180deg;
+}
+.btn-text--back:hover::before {
     transform: translateX(3px);
 }
 
@@ -651,6 +670,7 @@ img {
     aspect-ratio: 1/1;
     object-fit: cover;
 }
+
 /* .gift-images {
     position: relative;
     height: 200px;
@@ -960,13 +980,15 @@ img {
     margin-bottom: 3rem;
 }
 
+
+
 .club-cards {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
 }
 
 .club-card {
@@ -1286,6 +1308,26 @@ iframe {
     background: rgba(255, 255, 255, 0.02);
 }
 
+.card-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--color-bg);
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.card-column {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease;
+    justify-self: center;
+}
+
+.card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 .service-info {
     padding: 1rem;
     font-size: 0.85rem;
@@ -1406,7 +1448,8 @@ iframe {
         font-size: 0.75rem;
     }
 
-    .hero-hours, .hero-location {
+    .hero-hours,
+    .hero-location {
         font-size: 0.75rem;
     }
 

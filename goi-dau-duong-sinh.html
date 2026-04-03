@@ -82,7 +82,7 @@
                             <span class="tier-price">149k</span>
                             <span class="tier-name">Chuyên sâu 60'</span>
                         </div>
-                        <div class="header-tier highlight">
+                        <div class="header-tier">
                             <span class="tier-price">339k</span>
                             <span class="tier-name">Trị liệu 90'</span>
                         </div>
@@ -176,15 +176,14 @@
                     </div>
                 </div>
             </section>
-
+            <div class="footer-cta">
+                <button class="btn-primary large booknow-btn"><span class="btn-label">Đặt lịch
+                        ngay</span></button>
+            </div>
         </div>
     </section>
     <!-- Footer -->
     <footer class="footer" id="contact">
-        <div class="footer-cta">
-                <button class="btn-primary large js-book-appointy"><span class="btn-label">Đặt lịch
-                    ngay</span></button>
-        </div>
 
         <div class="footer-image">
             <img src="./assets/footer.jpeg" alt="Spa atmosphere" loading="lazy" decoding="async">
@@ -205,6 +204,21 @@
             <button class="btn-outline btn-outline--call"><span class="btn-label">Gọi để đặt lịch </span></button>
         </div>
     </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="back-button" title="Quay lại danh sách"><img width="20" height="20"
+                    src="https://img.icons8.com/ios/50/FFFFFF/back--v1.png" alt="back--v1" /></span>
+            <span class="close-button"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
+                    viewBox="0 0 50 50" style="fill:#FFFFFF;">
+                    <path
+                        d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z">
+                    </path>
+                </svg></span>
+            <iframe width="100%" height="700px" frameborder="0" title="Booking calendar"></iframe>
+        </div>
+    </div>
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
