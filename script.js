@@ -12,6 +12,96 @@ const scheduleIdleTask = (callback, timeout = 250) => {
     window.setTimeout(callback, 120);
 };
 
+const preloader = {
+    element: null,
+    progress: null,
+    rafId: null,
+    fallbackTimerId: null,
+    startTime: 0,
+    hasCompleted: false,
+    minVisibleDuration: 400,
+    progressValue: 0,
+    targetProgress: 0,
+    lastTargetUpdate: 0,
+
+    init() {
+        this.element = document.getElementById('preloader');
+        this.progress = document.querySelector('.preloader-progress');
+
+        if (!this.element || !this.progress) {
+            return;
+        }
+
+        this.startTime = performance.now();
+        document.body.classList.add('no-scroll');
+
+        this.progressValue = 0;
+        this.targetProgress = 0;
+        this.lastTargetUpdate = this.startTime;
+        this.rafId = window.requestAnimationFrame((timestamp) => this.animateProgress(timestamp));
+
+        const finish = () => this.complete();
+        window.addEventListener('load', finish, { once: true });
+        this.fallbackTimerId = window.setTimeout(finish, 2200);
+    },
+
+    animateProgress(timestamp) {
+        if (this.hasCompleted || !this.progress) {
+            return;
+        }
+
+        if (timestamp - this.lastTargetUpdate >= 160) {
+            this.targetProgress = Math.min(this.targetProgress + 8 + Math.random() * 12, 92);
+            this.lastTargetUpdate = timestamp;
+        }
+
+        this.progressValue += (this.targetProgress - this.progressValue) * 0.16;
+        this.progress.style.width = `${this.progressValue.toFixed(1)}%`;
+        this.rafId = window.requestAnimationFrame((nextTimestamp) => this.animateProgress(nextTimestamp));
+    },
+
+    complete() {
+        if (this.hasCompleted || !this.element || !this.progress) {
+            return;
+        }
+
+        this.hasCompleted = true;
+
+        if (this.rafId) {
+            window.cancelAnimationFrame(this.rafId);
+            this.rafId = null;
+        }
+
+        if (this.fallbackTimerId) {
+            window.clearTimeout(this.fallbackTimerId);
+            this.fallbackTimerId = null;
+        }
+
+        this.progress.style.width = '100%';
+
+        const elapsed = performance.now() - this.startTime;
+        const minWait = Math.max(0, this.minVisibleDuration - elapsed);
+
+        window.setTimeout(() => this.hide(), minWait + 120);
+    },
+
+    hide() {
+        if (!this.element) {
+            return;
+        }
+
+        this.element.classList.add('is-hidden');
+        document.body.classList.remove('no-scroll');
+
+        window.setTimeout(() => {
+            this.element?.remove();
+            this.element = null;
+        }, 420);
+    }
+};
+
+preloader.init();
+
 function optimizeImageLoading() {
     const priorityImages = new Set([
         ...document.querySelectorAll('.navbar img, .hero-title img, .detail-partner img')
@@ -344,6 +434,7 @@ const bookingManager = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    preloader.complete();
     optimizeImageLoading();
     deferredBackgrounds.init();
     navigation.init();
